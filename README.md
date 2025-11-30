@@ -188,6 +188,7 @@ Backend runs at:
 <img width="1920" height="1020" alt="Screenshot 2025-11-30 174154" src="https://github.com/user-attachments/assets/7c9f3f7d-eb03-4499-bd13-64d0eb4072c8" />
 <img width="1920" height="1020" alt="Screenshot 2025-11-30 174206" src="https://github.com/user-attachments/assets/a7a241c0-22db-4c4b-b08f-932086fad0b3" />
 <img width="1920" height="1020" alt="Screenshot 2025-11-30 174214" src="https://github.com/user-attachments/assets/b6776be3-05c7-42f4-8697-cd7250f80425" />
+<img width="1920" height="1020" alt="Screenshot 2025-11-30 174138" src="https://github.com/user-attachments/assets/f392a403-2a1a-46ef-bed0-9a5416145a2c" />
 
 ---
 
