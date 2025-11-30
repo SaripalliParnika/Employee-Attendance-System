@@ -8,6 +8,8 @@ A full-stack web application where **Employees** can mark attendance and view th
 
 https://drive.google.com/file/d/1kryhypK5yMBcq0d4XuNWu-ax8IJsI1BA/view?usp=drive_link
 
+---
+
 # 📂 **Project Features**
 
 ### 👨‍💼 **Employee**
