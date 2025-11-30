@@ -6,30 +6,31 @@ const AttendanceSchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
+
   date: {
     type: Date,
-    default: Date.now,
+    required: true,
   },
+
   checkInTime: {
-    type: String,
+    type: Date,
     default: null,
   },
+
   checkOutTime: {
-    type: String,
+    type: Date,
     default: null,
   },
+
   status: {
     type: String,
     enum: ["present", "absent", "late", "half-day"],
     default: "present",
   },
+
   totalHours: {
     type: Number,
     default: 0,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
   },
 });
 

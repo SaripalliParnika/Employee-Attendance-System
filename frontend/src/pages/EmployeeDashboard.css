@@ -1,0 +1,70 @@
+.dashboard-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-title {
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-welcome {
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #444;
+}
+
+.dashboard-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.dashboard-buttons button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
+}
+
+.checkin-btn {
+  background: #4caf50;
+  color: white;
+}
+
+.checkin-btn:hover {
+  background: #45a049;
+}
+
+.checkout-btn {
+  background: #f44336;
+  color: white;
+}
+
+.checkout-btn:hover {
+  background: #d32f2f;
+}
+
+.status-box {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  border-left: 4px solid #1976d2;
+}
+
+.status-box pre {
+  margin: 0;
+  font-size: 14px;
+}

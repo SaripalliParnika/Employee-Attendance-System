@@ -1,0 +1,45 @@
+.att-container {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.att-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+}
+
+.att-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.att-table th {
+  background: #4c63af;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+.att-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.att-table tr:hover {
+  background: #f5f7ff;
+}
+
+.no-data {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+  font-size: 16px;
+}

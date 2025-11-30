@@ -1,0 +1,45 @@
+.reports-wrapper {
+  max-width: 950px;
+  margin: auto;
+  padding: 20px;
+}
+
+.summary-card {
+  background: #f3f6ff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 5px solid #3b82f6;
+}
+
+.export-btn {
+  background: #10b981;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.export-btn:hover {
+  background: #0a9467;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.report-table th,
+.report-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.report-table th {
+  background: #eff3ff;
+}

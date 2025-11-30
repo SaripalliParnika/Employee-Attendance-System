@@ -1,0 +1,72 @@
+/* Full page center */
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6f9;
+  padding: 20px;
+}
+
+/* Card */
+.register-card {
+  width: 420px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  animation: fadeIn 0.4s ease;
+}
+
+/* Title */
+.register-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form inputs */
+.register-form input,
+.register-form select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 8px;
+  border: 1px solid #cfd3d8;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.register-form input:focus,
+.register-form select:focus {
+  border-color: #4b7bec;
+  box-shadow: 0 0 0 2px rgba(75,123,236,0.2);
+}
+
+/* Button */
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 18px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #4b7bec;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.register-btn:hover {
+  background: #3867d6;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0px); }
+}

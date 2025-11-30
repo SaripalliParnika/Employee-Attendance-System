@@ -10,7 +10,7 @@ const router = express.Router();
 // Employee dashboard
 router.get("/employee", protect, getEmployeeDashboard);
 
-// Manager dashboard
-router.get("/manager", protect, getManagerDashboard);
+// Manager dashboard (IMPORTANT: add managerOnly)
+router.get("/manager", protect, managerOnly, getManagerDashboard);
 
 module.exports = router;

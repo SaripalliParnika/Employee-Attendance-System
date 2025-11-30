@@ -1,28 +1,29 @@
 const User = require("../models/User");
 const Attendance = require("../models/Attendance");
 const { Parser } = require("json2csv");
+const moment = require("moment");
 
-// GET /api/manager/all
-exports.getAllEmployees = async (req, res) => {
+// GET: /api/manager/attendance  → all attendance records
+exports.getAllAttendance = async (req, res) => {
   try {
-    const employees = await User.find({ role: "employee" }).select("-password");
-    res.status(200).json(employees);
-  } catch (err) {
-    res.status(500).json({ message: "Failed to fetch employees" });
-  }
-};
-
-// GET /api/manager/employee/:id
-exports.getEmployeeById = async (req, res) => {
-  try {
-    const attendance = await Attendance.find({ userId: req.params.id });
-    res.status(200).json(attendance);
+    const data = await Attendance.find().populate("userId", "name email employeeId");
+    res.json(data);
   } catch (err) {
     res.status(500).json({ message: "Failed to fetch attendance" });
   }
 };
 
-// GET /api/manager/summary
+// GET: /api/manager/attendance/:id → specific employee attendance
+exports.getEmployeeAttendance = async (req, res) => {
+  try {
+    const data = await Attendance.find({ userId: req.params.id });
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ message: "Failed to fetch employee attendance" });
+  }
+};
+
+// GET: /api/manager/summary → team summary
 exports.getTeamSummary = async (req, res) => {
   try {
     const summary = await Attendance.aggregate([
@@ -34,32 +35,32 @@ exports.getTeamSummary = async (req, res) => {
       },
     ]);
 
-    res.status(200).json(summary);
+    res.json(summary);
   } catch (err) {
     res.status(500).json({ message: "Failed to fetch summary" });
   }
 };
 
-// GET /api/manager/today-status
-exports.getTodayStatus = async (req, res) => {
+// GET: /api/manager/today → today's attendance
+exports.todayStatus = async (req, res) => {
   try {
-    const today = new Date().toISOString().slice(0, 10);
+    const today = moment().startOf("day").toDate();
 
-    const attendance = await Attendance.find({ date: today }).populate(
+    const data = await Attendance.find({ date: today }).populate(
       "userId",
       "name employeeId"
     );
 
-    res.status(200).json(attendance);
+    res.json(data);
   } catch (err) {
     res.status(500).json({ message: "Failed to fetch today's status" });
   }
 };
 
-// GET /api/manager/export
-exports.exportAttendanceCSV = async (req, res) => {
+// GET: /api/manager/export → export CSV
+exports.exportCSV = async (req, res) => {
   try {
-    const attendanceData = await Attendance.find().lean();
+    const attendance = await Attendance.find().lean();
 
     const fields = [
       "_id",
@@ -72,11 +73,11 @@ exports.exportAttendanceCSV = async (req, res) => {
     ];
 
     const parser = new Parser({ fields });
-    const csv = parser.parse(attendanceData);
+    const csv = parser.parse(attendance);
 
     res.header("Content-Type", "text/csv");
     res.attachment("attendance_report.csv");
-    return res.send(csv);
+    res.send(csv);
   } catch (err) {
     res.status(500).json({ message: "Failed to export CSV" });
   }

@@ -50,12 +50,12 @@ exports.getEmployeeDashboard = async (req, res) => {
 exports.getManagerDashboard = async (req, res) => {
   try {
     // Total employees
-    const totalEmployees = await User.countDocuments({ role: "employee" });
+    const totalEmployees = await User.countDocuments({ role:"employee"});
 
     // Who is present today
     const today = new Date().toISOString().split("T")[0];
 
-    const presentToday = await Attendance.countDocuments({
+    const presentToday = await attendance.countDocuments({
       date: today,
       status: "present"
     });
@@ -63,6 +63,7 @@ exports.getManagerDashboard = async (req, res) => {
     const absentToday = totalEmployees - presentToday;
 
     // Find late employees
+
     const lateToday = await Attendance.countDocuments({
       date: today,
       status: "late"
